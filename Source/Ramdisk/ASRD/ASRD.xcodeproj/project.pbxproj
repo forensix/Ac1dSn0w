@@ -1,0 +1,196 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXFileReference section */
+		A52C41FF1476919600D342A0 /* ASCydiaPatcher */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ASCydiaPatcher; sourceTree = "<group>"; };
+		A542ED3F14759E3500795BD1 /* ac1dismygift.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ac1dismygift.plist; sourceTree = "<group>"; };
+		A542ED4014759E3500795BD1 /* bash */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = bash; sourceTree = "<group>"; };
+		A542ED4214759E3500795BD1 /* Cydia.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = Cydia.tar.gz; sourceTree = "<group>"; };
+		A542ED4314759E3500795BD1 /* fstab */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fstab; sourceTree = "<group>"; };
+		A542ED4414759E3500795BD1 /* ac1ddrop */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ac1ddrop; sourceTree = "<group>"; };
+		A542ED4514759E3500795BD1 /* gzip */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = gzip; sourceTree = "<group>"; };
+		A542ED4714759E3500795BD1 /* libgcc_s.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libgcc_s.1.dylib; sourceTree = "<group>"; };
+		A542ED4814759E3500795BD1 /* libhistory.6.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libhistory.6.0.dylib; sourceTree = "<group>"; };
+		A542ED4914759E3500795BD1 /* libiconv.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libiconv.2.dylib; sourceTree = "<group>"; };
+		A542ED4A14759E3500795BD1 /* libncurses.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libncurses.5.dylib; sourceTree = "<group>"; };
+		A542ED4B14759E3500795BD1 /* libreadline.6.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libreadline.6.0.dylib; sourceTree = "<group>"; };
+		A542ED4C14759E3500795BD1 /* libSystem.B.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libSystem.B.dylib; sourceTree = "<group>"; };
+		A542ED4D14759E3500795BD1 /* rm */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = rm; sourceTree = "<group>"; };
+		A542ED4E14759E3500795BD1 /* tar */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = tar; sourceTree = "<group>"; };
+		A542ED5014759E3500795BD1 /* launchd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = launchd; sourceTree = "<group>"; };
+		A542ED5114759E3500795BD1 /* ASRamdisk.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; name = ASRamdisk.dmg; path = ../ASRamdisk.dmg; sourceTree = SOURCE_ROOT; };
+		A542ED5214759E3500795BD1 /* ASRD.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; name = ASRD.dmg; path = ../ASRD.dmg; sourceTree = "<group>"; };
+		A542ED5314759E3500795BD1 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = build.sh; path = ../build.sh; sourceTree = SOURCE_ROOT; };
+		A542ED5414759E3500795BD1 /* Orig.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; name = Orig.dmg; path = ../Orig.dmg; sourceTree = SOURCE_ROOT; };
+		A542ED5614759E3500795BD1 /* hfs_mount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hfs_mount.h; sourceTree = "<group>"; };
+		A542ED5714759E3500795BD1 /* launchd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = launchd.c; sourceTree = "<group>"; };
+		A542ED5814759E3500795BD1 /* ld_debug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ld_debug.c; sourceTree = "<group>"; };
+		A542ED5914759E3500795BD1 /* ld_debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ld_debug.h; sourceTree = "<group>"; };
+		A542ED5A14759E3500795BD1 /* ld_error.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ld_error.c; sourceTree = "<group>"; };
+		A542ED5B14759E3500795BD1 /* ld_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ld_error.h; sourceTree = "<group>"; };
+		A542ED5C14759E3500795BD1 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		A542ED5E14759E3500795BD1 /* syscalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syscalls.h; sourceTree = "<group>"; };
+		A542ED5F14759E3500795BD1 /* syscalls.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = syscalls.S; sourceTree = "<group>"; };
+		A542ED6014759E3500795BD1 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		A542ED6114759E3500795BD1 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		A5B07E5E14765523006EACFB /* launchd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = launchd.h; sourceTree = "<group>"; };
+		A5C0FA60147BC12900AC5D1D /* K48AP.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = K48AP.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		A542ED2E14759E0400795BD1 = {
+			isa = PBXGroup;
+			children = (
+				A542ED5514759E3500795BD1 /* src */,
+				A542ED3A14759E3500795BD1 /* : */,
+				A542ED5414759E3500795BD1 /* Orig.dmg */,
+				A542ED5114759E3500795BD1 /* ASRamdisk.dmg */,
+				A542ED5214759E3500795BD1 /* ASRD.dmg */,
+				A542ED5314759E3500795BD1 /* build.sh */,
+			);
+			sourceTree = "<group>";
+		};
+		A542ED3A14759E3500795BD1 /* : */ = {
+			isa = PBXGroup;
+			children = (
+				A542ED3B14759E3500795BD1 /* dev */,
+				A542ED3C14759E3500795BD1 /* mnt */,
+				A542ED3D14759E3500795BD1 /* mnt1 */,
+				A542ED3E14759E3500795BD1 /* payload */,
+				A542ED4F14759E3500795BD1 /* sbin */,
+			);
+			name = ":";
+			path = "../:";
+			sourceTree = SOURCE_ROOT;
+		};
+		A542ED3B14759E3500795BD1 /* dev */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dev;
+			sourceTree = "<group>";
+		};
+		A542ED3C14759E3500795BD1 /* mnt */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mnt;
+			sourceTree = "<group>";
+		};
+		A542ED3D14759E3500795BD1 /* mnt1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mnt1;
+			sourceTree = "<group>";
+		};
+		A542ED3E14759E3500795BD1 /* payload */ = {
+			isa = PBXGroup;
+			children = (
+				A5C0FA60147BC12900AC5D1D /* K48AP.plist */,
+				A542ED3F14759E3500795BD1 /* ac1dismygift.plist */,
+				A542ED4014759E3500795BD1 /* bash */,
+				A52C41FF1476919600D342A0 /* ASCydiaPatcher */,
+				A542ED4214759E3500795BD1 /* Cydia.tar.gz */,
+				A542ED4314759E3500795BD1 /* fstab */,
+				A542ED4414759E3500795BD1 /* ac1ddrop */,
+				A542ED4514759E3500795BD1 /* gzip */,
+				A542ED4714759E3500795BD1 /* libgcc_s.1.dylib */,
+				A542ED4814759E3500795BD1 /* libhistory.6.0.dylib */,
+				A542ED4914759E3500795BD1 /* libiconv.2.dylib */,
+				A542ED4A14759E3500795BD1 /* libncurses.5.dylib */,
+				A542ED4B14759E3500795BD1 /* libreadline.6.0.dylib */,
+				A542ED4C14759E3500795BD1 /* libSystem.B.dylib */,
+				A542ED4D14759E3500795BD1 /* rm */,
+				A542ED4E14759E3500795BD1 /* tar */,
+			);
+			path = payload;
+			sourceTree = "<group>";
+		};
+		A542ED4F14759E3500795BD1 /* sbin */ = {
+			isa = PBXGroup;
+			children = (
+				A542ED5014759E3500795BD1 /* launchd */,
+			);
+			path = sbin;
+			sourceTree = "<group>";
+		};
+		A542ED5514759E3500795BD1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A5B07E5E14765523006EACFB /* launchd.h */,
+				A542ED5714759E3500795BD1 /* launchd.c */,
+				A542ED5614759E3500795BD1 /* hfs_mount.h */,
+				A542ED5814759E3500795BD1 /* ld_debug.c */,
+				A542ED5914759E3500795BD1 /* ld_debug.h */,
+				A542ED5A14759E3500795BD1 /* ld_error.c */,
+				A542ED5B14759E3500795BD1 /* ld_error.h */,
+				A542ED5C14759E3500795BD1 /* Makefile */,
+				A542ED5E14759E3500795BD1 /* syscalls.h */,
+				A542ED5F14759E3500795BD1 /* syscalls.S */,
+				A542ED6014759E3500795BD1 /* utils.c */,
+				A542ED6114759E3500795BD1 /* utils.h */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		A542ED3014759E0400795BD1 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = A542ED3314759E0400795BD1 /* Build configuration list for PBXProject "ASRD" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = A542ED2E14759E0400795BD1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		A542ED3114759E0400795BD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		A542ED3214759E0400795BD1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A542ED3314759E0400795BD1 /* Build configuration list for PBXProject "ASRD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A542ED3114759E0400795BD1 /* Debug */,
+				A542ED3214759E0400795BD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A542ED3014759E0400795BD1 /* Project object */;
+}

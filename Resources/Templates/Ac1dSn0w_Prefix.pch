@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'Ac1dSn0w' target in the 'Ac1dSn0w' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
+
+#define RELEASE_SAFELY(__POINTER) { \
+ if (__POINTER)                     \
+ {                                  \
+  [__POINTER release];              \
+  __POINTER = nil;                  \
+ }                                  \
+}

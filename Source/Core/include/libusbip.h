@@ -1,0 +1,142 @@
+/**
+ * libusbip - libusbip.h (Public libusbip header file)
+ * Copyright (C) 2011-2012 Manuel Gebele (forensix)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ **/
+
+#ifndef LIBUSBIP_H
+#define LIBUSBIP_H
+
+#include "inttypes.h"
+
+#define LIBUSBIP_MAX_DEVS 256
+#define LIBUSBIP_MAX_DATA 5012
+
+typedef enum {
+    LIBUSBIP_E_SUCCESS,
+    LIBUSBIP_E_FAILURE = -1
+} libusbip_error_t;
+
+typedef enum {
+    LIBUSBIP_RPC_USB_INIT,
+    LIBUSBIP_RPC_USB_EXIT,
+    LIBUSBIP_RPC_USB_GET_DEVICE_LIST,
+    LIBUSBIP_RPC_USB_GET_DEVICE_DESCRIPTOR,
+    LIBUSBIP_RPC_USB_OPEN,
+    LIBUSBIP_RPC_USB_OPEN_DEVICE_WITH_VID_PID,
+    LIBUSBIP_RPC_USB_CLOSE,
+    LIBUSBIP_RPC_USB_CLAIM_INTERFACE,
+    LIBUSBIP_RPC_USB_RELEASE_INTERFACE,
+    LIBUSBIP_RPC_USB_GET_CONFIGURATION,
+    LIBUSBIP_RPC_USB_SET_CONFIGURATION,
+    LIBUSBIP_RPC_USB_SET_INTERFACE_ALT_SETTING,
+    LIBUSBIP_RPC_USB_RESET_DEVICE,
+    LIBUSBIP_RPC_USB_CLEAR_HALT,
+    LIBUSBIP_RPC_USB_GET_STRING_DESCRIPTOR_ASCII,
+    LIBUSBIP_RPC_USB_CONTROL_TRANSFER,
+    LIBUSBIP_RPC_USB_BULK_TRANSFER
+} libusbip_rpc_t;
+
+typedef enum {
+    LIBUSBIP_CTX_CLIENT,
+    LIBUSBIP_CTX_SERVER
+} libusbip_ctx_t;
+
+struct libusbip_device {
+    uint16_t bus_number;
+    uint16_t device_address;
+    uint16_t num_configurations;
+    uint32_t session_data;
+};
+
+struct libusbip_device_list {
+    int n_devices;
+    struct libusbip_device devices[LIBUSBIP_MAX_DEVS];
+};
+
+struct libusbip_device_descriptor {
+    uint16_t bLength;
+    uint16_t bDescriptorType;
+    uint16_t bcdUSB;
+    uint16_t bDeviceClass;
+    uint16_t bDeviceSubClass;
+    uint16_t bDeviceProtocol;    
+    uint16_t bMaxPacketSize0;    
+    uint16_t idVendor;    
+    uint16_t idProduct;    
+    uint16_t bcdDevice;    
+    uint16_t iManufacturer;    
+    uint16_t iProduct;    
+    uint16_t iSerialNumber;    
+    uint16_t bNumConfigurations;
+};
+
+struct libusbip_device_handle {
+    uint32_t session_data;
+};
+
+struct libusbip_connection_info {
+    int server_sock;
+    int client_sock;
+    libusbip_ctx_t ctx;
+};
+
+struct libusbip_rpc_info {
+    struct libusbip_connection_info ci;
+    struct libusbip_device_list dl;
+    struct libusbip_device dev;
+    struct libusbip_device_descriptor dd;
+    struct libusbip_device_handle dh;
+    
+    int intf;
+    int conf;
+    int alt_setting;
+    int length;         /* bulk transfer (among others) */
+    int transferred;
+    uint16_t req_type;
+    uint16_t req;
+    uint16_t len;       /* control transfer */
+    uint16_t val;
+    uint16_t vid;
+    uint16_t pid;
+    uint16_t endpoint;
+    uint16_t idx;
+    uint16_t data[LIBUSBIP_MAX_DATA];
+    uint32_t timeout;
+};
+
+libusbip_rpc_t libusbip_get_rpc(int sock);
+
+libusbip_error_t libusbip_rpc_call(libusbip_rpc_t rpc, struct libusbip_rpc_info *ri);
+libusbip_error_t libusbip_init(struct libusbip_connection_info *ci);
+libusbip_error_t libusbip_get_device_descriptor(struct libusbip_connection_info *ci, struct libusbip_device *dev, struct libusbip_device_descriptor *dd);
+libusbip_error_t libusbip_open(struct libusbip_connection_info *ci, struct libusbip_device *dev, struct libusbip_device_handle *dh);
+libusbip_error_t libusbip_claim_interface(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, int intf);
+libusbip_error_t libusbip_release_interface(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, int intf);
+libusbip_error_t libusbip_get_configuration(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, int *conf);
+libusbip_error_t libusbip_set_interface_alt_setting(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, int intf, int alt_setting);
+libusbip_error_t libusbip_reset_device(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh);
+libusbip_error_t libusbip_clear_halt(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, uint16_t endpoint);
+
+void libusbip_exit(struct libusbip_connection_info *ci);
+void libusbip_get_device_list(struct libusbip_connection_info *ci, struct libusbip_device_list *dl);
+void libusbip_close(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh);
+void libusbip_open_device_with_vid_pid(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, uint16_t vid, uint16_t pid);
+
+int libusbip_get_string_descriptor_ascii(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, uint16_t idx, unsigned char *data, int length);
+int libusbip_control_transfer(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, uint16_t req_type, uint16_t req, uint16_t val, uint16_t idx, unsigned char *data, uint16_t len, uint32_t timeout);
+int libusbip_bulk_transfer(struct libusbip_connection_info *ci, struct libusbip_device_handle *dh, uint16_t endpoint, unsigned char *data, int length, int *transferred, uint32_t timeout);
+
+#endif /* LIBUSBIP_H */
