@@ -1,6 +1,6 @@
 ## License (GPL, version 3)
 
-Copyright (c) 2010-2011, Manuel Gebele (http://twitter.com/#!/ManuelGebele)
+Copyright (c) 2011-2012, Manuel Gebele (http://twitter.com/#!/ManuelGebele)
 
 All rights reserved.
 
