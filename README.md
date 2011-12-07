@@ -1,6 +1,6 @@
-## License (BSD)
+## License (BSD Version 3)
 
-Copyright (c) 2009, Manuel Gebele (http://twitter.com/#!/ManuelGebele)
+Copyright (c) 2010-2011, Manuel Gebele (http://twitter.com/#!/ManuelGebele)
 
 All rights reserved.
 
