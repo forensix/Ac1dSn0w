@@ -1,4 +1,4 @@
-## License (BSD Version 3)
+## License (GPL, version 3)
 
 Copyright (c) 2010-2011, Manuel Gebele (http://twitter.com/#!/ManuelGebele)
 
